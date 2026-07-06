@@ -1,6 +1,5 @@
 # PHP OOP Auth System (Register + Login)
-
-1. Zero-dependency, plain-PHP OOP starter for register/login with security
+Zero-dependency, plain-PHP OOP starter for register/login with security
    best practices baked in. No Composer required (uses a tiny custom
    autoloader).
 
