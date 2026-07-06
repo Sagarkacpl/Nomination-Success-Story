@@ -1,0 +1,1197 @@
+body {
+    font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.split-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.split-left {
+    flex: 1;
+    background: linear-gradient(135deg, #1a0b2e, #4a1259 60%, #7a1e6e);
+    color: #fff;
+    align-items: center;
+    padding: 60px;
+}
+
+.left-content {
+    max-width: 480px;
+}
+
+.text-gold {
+    color: #d4af37;
+}
+
+.split-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f8f9fa;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 480px;
+    background: #fff;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ==================== Dashboard Layout ==================== */
+.dashboard-topbar {
+    background: linear-gradient(135deg, #1a0b2e, #4a1259 60%, #7a1e6e);
+    height: 60px;
+}
+
+.avatar-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #d4af37;
+    color: #1a0b2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.dashboard-body {
+    display: flex;
+    min-height: calc(100vh - 60px - 52px);
+}
+
+.dashboard-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: #1a0b2e;
+    color: #fff;
+    transition: transform 0.25s ease;
+}
+
+.dashboard-sidebar .nav-link {
+    color: #cbb8d6;
+    padding: 12px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 3px solid transparent;
+    font-size: 14.5px;
+}
+
+.dashboard-sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+.dashboard-sidebar .nav-link.active {
+    background: rgba(212, 175, 55, 0.12);
+    color: #d4af37;
+    border-left-color: #d4af37;
+    font-weight: 600;
+}
+
+.dashboard-content {
+    flex: 1;
+    padding: 28px;
+    background: #f8f9fa;
+}
+
+.content-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.content-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #6a2fb0, #8e1e8e, #d4af37);
+}
+
+.dashboard-footer {
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+/* Mobile: sidebar collapses off-canvas */
+/* @media (max-width: 991.98px) {
+    .dashboard-sidebar {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        bottom: 0;
+        z-index: 1030;
+        transform: translateX(-100%);
+    }
+
+    .dashboard-sidebar.show {
+        transform: translateX(0);
+    }
+} */
+
+/* ==================== RESPONSIVE ADDITIONS ==================== */
+
+/* ---------- Tablet & below (≤ 991.98px) ---------- */
+@media (max-width: 991.98px) {
+    .dashboard-content {
+        padding: 18px;
+    }
+
+    .content-card {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .welcome-banner {
+        padding: 22px 24px;
+    }
+
+    .welcome-banner-deco {
+        width: 100px;
+    }
+
+    .deco-person {
+        font-size: 60px;
+    }
+}
+
+/* ---------- Small tablet / large phone (≤ 767.98px) ---------- */
+@media (max-width: 767.98px) {
+
+    /* Welcome banner stacks and deco graphic hides (adds no info, just wastes space) */
+    .welcome-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        text-align: left;
+    }
+
+    .welcome-banner-deco {
+        display: none !important;
+    }
+
+    .welcome-banner-text {
+        max-width: 100%;
+    }
+
+    /* Stat cards: stop them being squeezed, let them stack full width with breathing room */
+    .stat-card {
+        padding: 14px 16px;
+        margin-bottom: 12px;
+    }
+
+    .stat-icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    /* Form header */
+    .form-page-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .form-page-header .form-text {
+        font-size: 12.5px;
+    }
+
+    /* Section titles smaller + tighter spacing */
+    .section-title {
+        font-size: 14.5px;
+        margin: 26px 0 16px;
+        gap: 8px;
+    }
+
+    .section-title .sec-badge {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+
+    /* Engagement pills: smaller padding, wrap naturally, full readability */
+    .pill-check {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    /* Declaration cards: tighter padding on small screens */
+    .declaration-item {
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .declaration-item label {
+        font-size: 13.5px;
+    }
+
+    /* Submit button goes full-width for easy tapping */
+    .btn-submit-nomination {
+        width: 100%;
+        padding: 13px 0;
+    }
+
+    /* Login/signup split page: form card takes full padding-safe width */
+    .split-right {
+        padding: 24px 16px;
+    }
+
+    .form-card {
+        padding: 22px;
+        border-radius: 12px;
+    }
+}
+
+/* ---------- Phone (≤ 575.98px) ---------- */
+@media (max-width: 575.98px) {
+    .dashboard-content {
+        padding: 14px;
+    }
+
+    .content-card {
+        padding: 16px;
+    }
+
+    .form-card {
+        padding: 18px;
+    }
+
+    /* Avoid text touching screen edges on very small phones */
+    .form-page-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        flex-wrap: wrap;
+    }
+
+    .section-title::after {
+        display: none;
+    }
+
+    /* Pills go near-full-width friendly, still wrap */
+    .engagement-pills {
+        gap: 8px;
+    }
+
+    .pill-check {
+        padding: 7px 12px;
+        font-size: 12.5px;
+    }
+
+    /* Form controls: slightly reduce padding so labels/inputs don't feel oversized on narrow screens */
+    .form-control,
+    .form-select {
+        padding: 9px 12px;
+        font-size: 14px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    /* Declaration checkbox + text: ensure checkbox doesn't shrink weirdly */
+    .declaration-item .form-check-input {
+        width: 17px;
+        height: 17px;
+    }
+
+    /* Dashboard avatar circle scales down slightly */
+    .avatar-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 12.5px;
+    }
+}
+
+/* ---------- Mobile sidebar overlay backdrop (improves off-canvas UX) ---------- */
+@media (max-width: 991.98px) {
+    .dashboard-sidebar.show::after {
+        content: "";
+    }
+
+    body.sidebar-open::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        top: 60px;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1020;
+    }
+}
+
+/* ==================== Nomination Form Page ==================== */
+
+.form-page-header h3 {
+    color: #1a0b2e;
+    letter-spacing: -0.3px;
+}
+
+.form-page-header .form-text {
+    font-size: 13.5px;
+}
+
+/* Section headers — numbered badge style */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1a0b2e;
+    font-weight: 700;
+    font-size: 16px;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin: 36px 0 20px;
+    position: relative;
+}
+
+.section-title:first-of-type {
+    margin-top: 8px;
+}
+
+.section-title .sec-badge {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #6a2fb0, #8e1e8e);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #e5dcea, transparent);
+    margin-left: 8px;
+}
+
+/* Form fields */
+.form-label {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: #3a2e42;
+    margin-bottom: 6px;
+}
+
+.form-control,
+.form-select {
+    border: 1.5px solid #e4dde9;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14.5px;
+    background: #fcfbfd;
+    transition: all 0.15s ease;
+}
+
+.form-control:focus {
+    border-color: #8e1e8e;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(142, 30, 142, 0.1);
+}
+
+.form-text {
+    color: #8a7f92;
+    font-size: 12.5px;
+}
+
+/* Nature of Engagement — pill checkboxes */
+.engagement-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: 1.5px solid #e0dbe6;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.15s ease;
+    user-select: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.pill-check:hover {
+    border-color: #8e1e8e;
+}
+
+.pill-tick {
+    display: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    color: #6a2fb0;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.btn-check:checked+.pill-check {
+    background: linear-gradient(135deg, #6a2fb0, #8e1e8e);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(142, 30, 142, 0.25);
+}
+
+.btn-check:checked+.pill-check .pill-tick {
+    display: inline-flex;
+}
+
+/* Declaration checkboxes — card style */
+.declaration-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1.5px solid #e4dde9;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all 0.15s ease;
+    background: #fcfbfd;
+}
+
+.declaration-item:hover {
+    border-color: #c9b3d6;
+}
+
+.declaration-item.checked {
+    border-color: #8e1e8e;
+    background: rgba(142, 30, 142, 0.04);
+}
+
+.declaration-item .form-check-input {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.declaration-item .form-check-input:checked {
+    background-color: #8e1e8e;
+    border-color: #8e1e8e;
+}
+
+.declaration-item label {
+    font-size: 14px;
+    color: #3a2e42;
+    line-height: 1.5;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Submit button */
+.btn-submit-nomination {
+    background: linear-gradient(135deg, #6a2fb0, #8e1e8e);
+    border: none;
+    padding: 13px 44px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(142, 30, 142, 0.28);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-submit-nomination:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(142, 30, 142, 0.35);
+    color: #fff;
+}
+
+/* ==================== Welcome Banner ==================== */
+.welcome-banner {
+    background: linear-gradient(135deg, #6a2fb0, #8e1e8e 60%, #a233c9);
+    border-radius: 16px;
+    padding: 28px 32px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-banner-text {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+}
+
+.banner-pill {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+.welcome-banner-deco {
+    position: relative;
+    width: 160px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.deco-person {
+    font-size: 90px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.deco-star {
+    position: absolute;
+    color: #ffd764;
+    font-size: 20px;
+}
+
+.deco-star-1 {
+    top: 10px;
+    left: 10px;
+}
+
+.deco-star-2 {
+    bottom: 15px;
+    left: 30px;
+    font-size: 14px;
+}
+
+/* ==================== Stat Cards ==================== */
+.stat-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.stat-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.stat-icon-sm {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+}
+
+.bg-purple {
+    background: rgba(106, 47, 176, 0.12);
+    color: #6a2fb0;
+}
+
+.bg-green {
+    background: rgba(25, 135, 84, 0.12);
+    color: #198754;
+}
+
+.bg-blue {
+    background: rgba(13, 110, 253, 0.12);
+    color: #0d6efd;
+}
+
+.bg-amber {
+    background: rgba(255, 193, 7, 0.15);
+    color: #b8860b;
+}
+
+.bg-red {
+    background: rgba(220, 53, 69, 0.12);
+    color: #dc3545;
+}
+
+/* ==================== Nomination Preview Modal ==================== */
+
+.nomination-preview-modal {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.nomination-preview-header {
+    background: linear-gradient(135deg, #6a2fb0, #8e1e8e);
+    color: #fff;
+    border-bottom: none;
+    padding: 20px 24px;
+}
+
+.preview-regno {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.preview-section-title {
+    color: #6a2fb0;
+    font-weight: 700;
+    font-size: 13.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-left: 4px solid #8e1e8e;
+    padding-left: 10px;
+    margin: 20px 0 12px;
+}
+
+.preview-section-title:first-of-type {
+    margin-top: 0;
+}
+
+.preview-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px 14px;
+    background: #fcfbfd;
+    border: 1px solid #e4dde9;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.preview-label {
+    font-size: 10.5px;
+    color: #8a7f92;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.preview-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2b2130;
+}
+
+.preview-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #6a2fb0, #8e1e8e);
+    color: #fff;
+    padding: 5px 14px;
+    margin: 3px 4px 0 0;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.preview-box {
+    border: 1px solid #e4dde9;
+    background: #fcfbfd;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a2e42;
+}
+
+.preview-decl-item {
+    padding: 10px 4px;
+    font-size: 13.5px;
+    color: #3a2e42;
+    border-bottom: 1px solid #f0ebf3;
+}
+
+.preview-decl-item:last-child {
+    border-bottom: none;
+}
+
+.nomination-pdf-btn {
+    background: linear-gradient(135deg, #6a2fb0, #8e1e8e);
+    border: none;
+    font-weight: 600;
+}
+
+.nomination-pdf-btn:hover {
+    color: #fff;
+    opacity: 0.92;
+}
+
+/* Mobile tweaks */
+@media (max-width: 575.98px) {
+    .nomination-preview-header {
+        padding: 16px 18px;
+    }
+
+    .preview-section-title {
+        font-size: 12.5px;
+        margin: 16px 0 10px;
+    }
+
+    .preview-value {
+        font-size: 13px;
+    }
+}
+
+
+/* ==================== Password Strength Meter ==================== */
+.pwd-strength-bar {
+    width: 100%;
+    height: 6px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pwd-strength-fill {
+    height: 100%;
+    width: 0%;
+    background: #dc3545;
+    transition: width 0.25s ease, background 0.25s ease;
+}
+
+/* ==================== Admin Nominations — Status Filter Tabs ==================== */
+.status-filter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.status-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    border: 1.5px solid #e4dde9;
+    background: #fcfbfd;
+    color: #3a2e42;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.status-filter-btn:hover {
+    border-color: #8e1e8e;
+}
+
+.status-filter-btn .count-badge {
+    background: #e4dde9;
+    color: #3a2e42;
+    padding: 1px 8px;
+    border-radius: 50px;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.status-filter-btn.active {
+    background: linear-gradient(135deg, #6a2fb0, #8e1e8e);
+    border-color: transparent;
+    color: #fff;
+}
+
+.status-filter-btn.active .count-badge {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+
+/* ==================== Congratulations Banner (Second Round) ==================== */
+.congrats-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    background: linear-gradient(135deg, #1a0b2e, #4a1259 45%, #b8860b 130%);
+    border-radius: 18px;
+    padding: 32px 36px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(142, 30, 142, 0.25);
+    flex-wrap: wrap;
+}
+
+.congrats-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 85% 20%, rgba(212, 175, 55, 0.25), transparent 55%);
+    pointer-events: none;
+}
+
+/* ---- Trophy icon ---- */
+.congrats-icon-wrap {
+    flex-shrink: 0;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4af37, #f0d876);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #4a1259;
+    box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.15), 0 12px 30px rgba(212, 175, 55, 0.35);
+    position: relative;
+    z-index: 2;
+    animation: trophyFloat 3.2s ease-in-out infinite;
+}
+
+@keyframes trophyFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(-4deg);
+    }
+}
+
+/* ---- Text content ---- */
+.congrats-text {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    flex: 1;
+    min-width: 240px;
+}
+
+.congrats-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #ffd764;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.congrats-text h4 {
+    font-size: 20px;
+}
+
+.congrats-text p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14.5px;
+    max-width: 520px;
+    line-height: 1.6;
+}
+
+/* ---- CTA button ---- */
+.congrats-btn {
+    background: linear-gradient(135deg, #d4af37, #f0d876);
+    color: #3a1150;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14.5px;
+    box-shadow: 0 8px 22px rgba(212, 175, 55, 0.4);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.congrats-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(212, 175, 55, 0.55);
+    color: #3a1150;
+}
+
+/* ---- Confetti dots (pure CSS, subtle floating) ---- */
+.congrats-confetti {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.confetti-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    opacity: 0.7;
+    animation: confettiFloat 5s ease-in-out infinite;
+}
+
+.confetti-dot.c1 {
+    top: 15%;
+    left: 55%;
+    background: #d4af37;
+    animation-delay: 0s;
+}
+
+.confetti-dot.c2 {
+    top: 65%;
+    left: 62%;
+    background: #ffffff;
+    animation-delay: 0.8s;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.confetti-dot.c3 {
+    top: 30%;
+    left: 72%;
+    background: #8e1e8e;
+    animation-delay: 1.6s;
+}
+
+.confetti-dot.c4 {
+    top: 75%;
+    left: 40%;
+    background: #d4af37;
+    animation-delay: 2.4s;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.confetti-dot.c5 {
+    top: 20%;
+    left: 85%;
+    background: #ffffff;
+    animation-delay: 1.2s;
+}
+
+.confetti-dot.c6 {
+    top: 55%;
+    left: 20%;
+    background: #d4af37;
+    animation-delay: 3s;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+@keyframes confettiFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(-16px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 767.98px) {
+    .congrats-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 22px;
+    }
+
+    .congrats-text {
+        min-width: 0;
+    }
+
+    .congrats-text p {
+        max-width: 100%;
+    }
+
+    .congrats-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .congrats-icon-wrap,
+    .confetti-dot {
+        animation: none;
+    }
+}
+
+/* ==================== Congratulations Card (cream + gold, matches reference) ==================== */
+.congrats-card-v4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    background: linear-gradient(135deg, #fffdf9, #faf3e6);
+    border: 1px solid #f0e4c8;
+    border-radius: 20px;
+    padding: 34px 42px;
+    overflow: hidden;
+    box-shadow: 0 12px 34px rgba(184, 134, 11, 0.1);
+    flex-wrap: wrap;
+    min-height: 190px;
+}
+
+/* ---- Decorative wave lines (right side background) ---- */
+.v4-wave-deco {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.v4-dot-pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 140px;
+    height: 90px;
+    z-index: 0;
+    pointer-events: none;
+    background-image: radial-gradient(#d4af37 1px, transparent 1px);
+    background-size: 12px 12px;
+    opacity: 0.25;
+    -webkit-mask-image: radial-gradient(circle at bottom left, black, transparent 70%);
+    mask-image: radial-gradient(circle at bottom left, black, transparent 70%);
+}
+
+/* ---- Medal ---- */
+.v4-medal-wrap {
+    flex-shrink: 0;
+    width: 96px;
+    position: relative;
+    z-index: 2;
+    animation: v4MedalSwing 3.2s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+.v4-medal-svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 16px rgba(184, 134, 11, 0.35));
+}
+
+@keyframes v4MedalSwing {
+
+    0%,
+    100% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(4deg);
+    }
+}
+
+/* ---- Content ---- */
+.v4-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    min-width: 260px;
+}
+
+.v4-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(34, 197, 94, 0.12);
+    color: #15803d;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.v4-content h4 {
+    color: #1a1a1a;
+    font-size: 25px;
+}
+
+.v4-content p {
+    color: #4b4b4b;
+    font-size: 14.5px;
+    line-height: 1.65;
+    max-width: 460px;
+}
+
+/* ---- Buttons ---- */
+.v4-btn-gold {
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 26px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14.5px;
+    box-shadow: 0 8px 20px rgba(184, 134, 11, 0.3);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.v4-btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(184, 134, 11, 0.4);
+    color: #fff;
+}
+
+.v4-btn-outline {
+    background: #fff;
+    color: #8a6d1f;
+    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: 10px;
+    border: 1.5px solid #e8d9ab;
+    font-size: 14.5px;
+    transition: all 0.18s ease;
+}
+
+.v4-btn-outline:hover {
+    border-color: #d4af37;
+    background: #fdf8ec;
+    color: #6a5416;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 767.98px) {
+    .congrats-card-v4 {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 22px;
+    }
+
+    .v4-wave-deco {
+        opacity: 0.5;
+    }
+
+    .v4-content p {
+        max-width: 100%;
+    }
+
+    .v4-content .d-flex {
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .v4-medal-wrap {
+        animation: none;
+    }
+}

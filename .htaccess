@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Sirf real FILES (jaise /uploads/xyz.jpg) seedha serve karo
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Baaki sab (root URL "/" bhi, register, dashboard, sab) public/ me forward
+RewriteRule ^(.*)$ public/$1 [L]
