@@ -1,8 +1,8 @@
 # PHP OOP Auth System (Register + Login)
 
-Zero-dependency, plain-PHP OOP starter for register/login with security
-best practices baked in. No Composer required (uses a tiny custom
-autoloader).
+1. Zero-dependency, plain-PHP OOP starter for register/login with security
+   best practices baked in. No Composer required (uses a tiny custom
+   autoloader).
 
 ## Folder structure
 
@@ -45,13 +45,13 @@ Two `.htaccess` files work together:
 
 Result:
 
-| You visit                          | What actually runs           |
-|-------------------------------------|-------------------------------|
-| `http://localhost/php-auth-system/` | `public/index.php` (login page) |
-| `.../php-auth-system/register`      | `public/register.php`        |
-| `.../php-auth-system/dashboard`     | `public/dashboard.php`        |
-| `.../php-auth-system/logout`        | `public/logout.php`           |
-| `.../php-auth-system/verify?token=..`| `public/verify.php`          |
+| You visit                             | What actually runs              |
+| ------------------------------------- | ------------------------------- |
+| `http://localhost/php-auth-system/`   | `public/index.php` (login page) |
+| `.../php-auth-system/register`        | `public/register.php`           |
+| `.../php-auth-system/dashboard`       | `public/dashboard.php`          |
+| `.../php-auth-system/logout`          | `public/logout.php`             |
+| `.../php-auth-system/verify?token=..` | `public/verify.php`             |
 
 **Important:** Apache's document root must still physically point at
 `php-auth-system/` (e.g. your XAMPP `htdocs/php-auth-system/`), NOT at
