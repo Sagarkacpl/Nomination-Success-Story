@@ -24,9 +24,9 @@ define('DB_CHARSET', 'utf8mb4');
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);              // 587 = STARTTLS, 465 = SSL
 define('SMTP_ENCRYPTION', 'tls');      // tls | ssl
-define('SMTP_USERNAME', 'sagar.arete@gmail.com');
-define('SMTP_PASSWORD', 'yctysobogftdxuui');
-define('SMTP_FROM_EMAIL', 'sagar.arete@gmail.com');
+define('SMTP_USERNAME', 'SMTP_EMAIL');
+define('SMTP_PASSWORD', 'SMTP_PASSWORD');
+define('SMTP_FROM_EMAIL', 'SMTP_EMAIL');
 define('SMTP_FROM_NAME', APP_NAME);
 
 // ---------- File Upload ----------
